@@ -220,6 +220,15 @@ function start() {
       camera.zoom = Math.min(1, camera.aspect / 0.8);
     }
     camera.updateProjectionMatrix();
+    // Where the brainstem ends on screen, as --brain-bottom, so the text can sit in the gap below.
+    if (hold) {
+      const c = camera.clone();
+      c.position.set(0, 0.15, 5.4);
+      c.lookAt(0, -0.05, 0);
+      c.updateMatrixWorld();
+      const v = new THREE.Vector3(0, -1.3, -0.5).applyEuler(new THREE.Euler(0.12, 0, 0)).project(c);
+      root.style.setProperty("--brain-bottom", `${Math.round(((1 - v.y) / 2) * h)}px`);
+    }
   }
   resize();
   addEventListener("resize", resize);
