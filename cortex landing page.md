@@ -28,8 +28,8 @@ have it accessible from https://cortex.fabuseless.dev/
 
 ## Status
 
-- Current focus: Stage 1, page built and checked locally.
-- Next: create the GitHub repo, push, turn on Pages; then Stage 2 (custom domain).
+- Current focus: Stage 1 done: live at https://fabuseless.github.io/cortex-landing/ (repo https://github.com/fabuseless/cortex-landing, Pages from `main`, root).
+- Next: Stage 2, `cortex.fabuseless.dev`: a `CNAME` file in the repo and a DNS CNAME record pointing at `fabuseless.github.io`. Replace the placeholder copy.
 - Blocked on:
 
 ## Log
@@ -38,5 +38,6 @@ Newest first. Claude adds entries here with the `cortex` skill ("log progress").
 
 ### 2026-10-26
 
+- Published: repo `fabuseless/cortex-landing` (public), branch renamed to `main`, GitHub Pages on; checked the live page loads and renders.
 - Built the landing page: Cortex's brain point cloud over a short pitch, in the Blueprint style; checked in light/dark at desktop and phone sizes (headless Chromium).
 - Created hub note.
