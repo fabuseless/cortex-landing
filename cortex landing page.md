@@ -28,9 +28,9 @@ have it accessible from https://cortex.fabuseless.dev/
 
 ## Status
 
-- Current focus: Stage 1 done: live at https://fabuseless.github.io/cortex-landing/ (repo https://github.com/fabuseless/cortex-landing, Pages from `main`, root).
+- Current focus: Stages 1 and 2 done: live at https://cortex.fabuseless.dev/ (HTTPS enforced; the github.io address redirects there) (repo https://github.com/fabuseless/cortex-landing, Pages from `main`, root).
 - Stage 2: `CNAME` file added; public DNS already resolves `cortex.fabuseless.dev` → `pulse.fabuseless.dev` → `fabuseless.github.io` (Cloudflare). On the tailnet the same name resolves to Cortex itself (`lan_names`), so from home you see Cortex, elsewhere this page.
-- Next: once GitHub's certificate for the domain is live, turn on Enforce HTTPS. Replace the placeholder copy.
+- Next: replace the placeholder copy.
 - Blocked on:
 
 ## Log
@@ -39,6 +39,7 @@ Newest first. Claude adds entries here with the `cortex` skill ("log progress").
 
 ### 2026-10-26
 
+- HTTPS certificate live for cortex.fabuseless.dev; turned on Enforce HTTPS. Checked the page over HTTPS with the internal DNS redirect off.
 - Added `CNAME` for cortex.fabuseless.dev; Pages serves it over HTTP, certificate approved but not yet deployed.
 - Published: repo `fabuseless/cortex-landing` (public), branch renamed to `main`, GitHub Pages on; checked the live page loads and renders.
 - Built the landing page: Cortex's brain point cloud over a short pitch, in the Blueprint style; checked in light/dark at desktop and phone sizes (headless Chromium).
