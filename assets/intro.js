@@ -213,6 +213,12 @@ function start() {
     const w = intro.clientWidth || innerWidth, h = intro.clientHeight || innerHeight;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
+    // Landing page: the canvas fills the screen behind the text, so raise the
+    // brain by data-shift (a fraction of the height) and fit it to narrow screens.
+    if (hold) {
+      camera.setViewOffset(w, h, 0, h * (Number(intro.dataset.shift) || 0), w, h);
+      camera.zoom = Math.min(1, camera.aspect / 0.8);
+    }
     camera.updateProjectionMatrix();
   }
   resize();

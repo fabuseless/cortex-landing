@@ -21,16 +21,16 @@ have it accessible from https://cortex.fabuseless.dev/
 ## Design
 
 - Plain static site, no build step: `index.html` + `assets/`, served from the repo root (`.nojekyll` so GitHub Pages serves it as is).
-- The brain is `assets/intro.js`, an unchanged copy of `cortex/app/public/intro.js` run in hold mode (`data-hold`), as on Cortex's "not paired" page. To update it, copy the file again.
+- The brain is `assets/intro.js`: `cortex/app/public/intro.js` run in hold mode (`data-hold`), as on Cortex's "not paired" page, plus a few lines in `resize()` for this page. Its canvas fills the screen behind the text (one surface, so the points gather behind the copy); `data-shift` raises the brain above the text and narrow screens zoom out to fit. Keep those lines when copying the file again.
 - Look is Cortex's default **Blueprint** style: `assets/themes.css` is its rules cut from Cortex's compiled `/static/themes.css` (font paths pointed at `assets/fonts/`). Follows the visitor's light/dark setting.
 - three.js 0.186.1 and the fonts (Geist, Geist Mono, Instrument Serif; OFL, licences in `assets/fonts/licenses/`) are vendored, so the page needs no CDN.
-- Copy ("A second brain for you and Claude", "Coming soon") is a placeholder for the advertising wording.
+- Copy must not name Claude (other models may come later). Headline: "Thinking, connected." (chosen 2026-10-26). "Coming soon" is still a placeholder.
 
 ## Status
 
 - Current focus: Stages 1 and 2 done: live at https://cortex.fabuseless.dev/ (HTTPS enforced; the github.io address redirects there) (repo https://github.com/fabuseless/cortex-landing, Pages from `main`, root).
 - Stage 2: `CNAME` file added; public DNS already resolves `cortex.fabuseless.dev` → `pulse.fabuseless.dev` → `fabuseless.github.io` (Cloudflare). On the tailnet the same name resolves to Cortex itself (`lan_names`), so from home you see Cortex, elsewhere this page.
-- Next: replace the placeholder copy.
+- Next: replace "Coming soon" when there's something to link to.
 - Blocked on:
 
 ## Log
@@ -39,6 +39,7 @@ Newest first. Claude adds entries here with the `cortex` skill ("log progress").
 
 ### 2026-10-26
 
+- Headline now "Thinking, connected.", copy no longer names Claude. Brain canvas made full-screen behind the text, so the points gather behind the copy instead of in a separate band.
 - HTTPS certificate live for cortex.fabuseless.dev; turned on Enforce HTTPS. Checked the page over HTTPS with the internal DNS redirect off.
 - Added `CNAME` for cortex.fabuseless.dev; Pages serves it over HTTP, certificate approved but not yet deployed.
 - Published: repo `fabuseless/cortex-landing` (public), branch renamed to `main`, GitHub Pages on; checked the live page loads and renders.
