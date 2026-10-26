@@ -12,7 +12,11 @@ create a cortex landing page on github pages
 
 ## Goal
 
-What "done" looks like.
+### Stage 1
+a working github pages site with the cortex point cloud holding page. 
+
+### Stage 2
+have it accessible from https://cortex.fabuseless.dev/
 
 ## Design
 
