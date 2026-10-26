@@ -39,6 +39,7 @@ Newest first. Claude adds entries here with the `cortex` skill ("log progress").
 
 ### 2026-10-26
 
+- Wrote [[handover-holding-pages]]: the same full-screen canvas for Cortex's holding pages (not paired, Spark not connected), to be done outside Cortex.
 - Headline now "Thinking, connected.", copy no longer names Claude. Brain canvas made full-screen behind the text, so the points gather behind the copy instead of in a separate band.
 - HTTPS certificate live for cortex.fabuseless.dev; turned on Enforce HTTPS. Checked the page over HTTPS with the internal DNS redirect off.
 - Added `CNAME` for cortex.fabuseless.dev; Pages serves it over HTTP, certificate approved but not yet deployed.
