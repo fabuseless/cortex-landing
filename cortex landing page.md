@@ -21,7 +21,7 @@ have it accessible from https://cortex.fabuseless.dev/
 ## Design
 
 - Plain static site, no build step: `index.html` + `assets/`, served from the repo root (`.nojekyll` so GitHub Pages serves it as is).
-- The brain is `assets/intro.js`: `cortex/app/public/intro.js` run in hold mode (`data-hold`), as on Cortex's "not paired" page, plus a few lines in `resize()` for this page. Its canvas fills the screen behind the text (one surface, so the points gather behind the copy); `data-shift` raises the brain above the text and narrow screens zoom out to fit; it also sets `--brain-bottom` (where the brainstem ends) so the text sits in the gap below, slightly above its middle (4:5 spacers). Keep those lines when copying the file again.
+- The brain is `assets/intro.js`: `cortex/app/public/intro.js` run in hold mode (`data-hold`), plus a few lines in `resize()`. Layout matches Cortex's home launch screen (user's choice, 2026-10-26): canvas fills the screen, brain centred at full size, text overlaid bottom-left with `.intro-copy` / `.intro-mark` styles from `app.css`. On narrow screens (aspect < 0.8) the brain is zoomed to fit the width and raised clear of the text. Keep those lines when copying intro.js again.
 - Look is Cortex's default **Blueprint** style: `assets/themes.css` is its rules cut from Cortex's compiled `/static/themes.css` (font paths pointed at `assets/fonts/`). Follows the visitor's light/dark setting.
 - three.js 0.186.1 and the fonts (Geist, Geist Mono, Instrument Serif; OFL, licences in `assets/fonts/licenses/`) are vendored, so the page needs no CDN.
 - Copy must not name Claude (other models may come later). Headline: "Thinking, connected." (chosen 2026-10-26). "Coming soon" is still a placeholder.
@@ -39,6 +39,7 @@ Newest first. Claude adds entries here with the `cortex` skill ("log progress").
 
 ### 2026-10-26
 
+- Switched to the home launch-screen layout (brain centred, text bottom-left in the home page's sizes) at the user's request; handover revised to match.
 - Text block now centred (optically, a little high) in the gap between the brain and the bottom of the screen.
 - Wrote [[handover-holding-pages]]: the same full-screen canvas for Cortex's holding pages (not paired, Spark not connected), to be done outside Cortex.
 - Headline now "Thinking, connected.", copy no longer names Claude. Brain canvas made full-screen behind the text, so the points gather behind the copy instead of in a separate band.

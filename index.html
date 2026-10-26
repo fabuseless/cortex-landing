@@ -12,32 +12,29 @@
 <link rel="apple-touch-icon" href="assets/icon-180.png">
 <link rel="stylesheet" href="assets/themes.css">
 <script type="importmap">{"imports":{"three":"./assets/vendor/three.module.js"}}</script>
-<!-- The page around the brain follows Cortex's holding page (server.mjs scanPage). -->
 <style>*{box-sizing:border-box}html,body{height:100%}
-body{margin:0;display:flex;flex-direction:column;min-height:100dvh;background:var(--bg) var(--grain-img);color:var(--text);font:var(--body-size)/1.55 var(--font-body);-webkit-text-size-adjust:100%;padding-top:var(--brain-bottom,0px)}
-/* The text sits in the gap below the brain (intro.js sets --brain-bottom), a little above its middle. */
-body::before{content:"";flex:4}body::after{content:"";flex:5}
-.intro{position:fixed;inset:0;z-index:0;pointer-events:none}.intro canvas{position:absolute;inset:0;width:100%;height:100%}
-main{position:relative;z-index:1;width:100%;max-width:34rem;margin:0 auto;padding:24px 16px max(24px,env(safe-area-inset-bottom));overflow:hidden}
-main>*{animation:rise 1.4s .9s both cubic-bezier(.2,.7,.2,1)}
-.mark{display:flex;align-items:center;gap:14px;font:var(--head-style) var(--head-weight) clamp(34px,6vw,48px)/1 var(--font-head);letter-spacing:-.03em}
-.logo{display:grid;place-items:center;width:30px;height:30px;border:1.5px solid var(--ink);border-radius:min(var(--radius),7px);font:600 13px var(--font-code);font-style:normal;position:relative;flex:none}
+body{margin:0;position:relative;min-height:100dvh;background:var(--bg) var(--grain-img);color:var(--text);font:var(--body-size)/1.55 var(--font-body);-webkit-text-size-adjust:100%}
+.intro{position:fixed;inset:0;pointer-events:none}.intro canvas{position:absolute;inset:0;width:100%;height:100%}
+/* From app.css's launch screen (.intro-copy, .intro-mark, .intro-enter), so this matches Cortex's home page. */
+main{position:absolute;left:clamp(16px,6vw,96px);right:16px;bottom:clamp(32px,9vh,96px);max-width:34rem;animation:intro-in 1.4s .9s both cubic-bezier(.2,.7,.2,1)}
+.mark{display:flex;align-items:center;gap:18px;font:var(--head-style) var(--head-weight) clamp(44px,7vw,88px)/1 var(--font-head);letter-spacing:-.035em}
+.logo{display:grid;place-items:center;width:2.2em;height:2.2em;border:2px solid var(--ink);border-radius:min(var(--radius),7px);font:600 .3em var(--font-code);font-style:normal;position:relative;flex:none}
 .logo::after{content:"";position:absolute;right:-5px;bottom:-5px;width:7px;height:7px;background:var(--accent);border-radius:min(var(--radius),4px)}
-h1{margin:20px 0 6px;font:600 19px/1.3 var(--font-body)}p{margin:0 0 18px;color:var(--muted)}
-.soon{display:inline-block;padding:9px 14px;border:1px solid var(--line);border-radius:var(--radius);font:600 12px var(--font-ui);text-transform:uppercase;letter-spacing:.08em;color:var(--text)}
-.soon::before{content:"";display:inline-block;width:7px;height:7px;margin-right:9px;background:var(--accent);border-radius:min(var(--radius),4px);vertical-align:1px}
-@keyframes rise{from{opacity:0;transform:translateY(24px)}}
-@media (prefers-reduced-motion:reduce){main>*{animation:none}}</style>
+h1{margin:16px 0 4px;font:600 15px/1.5 var(--font-ui);color:var(--text)}p{margin:0 0 26px;font:15px/1.5 var(--font-ui);color:var(--muted)}
+.soon{font:13px var(--font-ui);letter-spacing:.04em;text-transform:uppercase;color:var(--text)}
+.soon::after{content:"";display:inline-block;width:6px;height:6px;margin-left:9px;background:var(--accent);border-radius:min(var(--radius),3px);vertical-align:1px}
+@keyframes intro-in{from{opacity:0;transform:translateY(24px)}}
+@media (prefers-reduced-motion:reduce){main{animation:none}}</style>
 </head>
 <body>
-<div class="intro" id="intro" data-hold data-shift="0.16" aria-hidden="true"><canvas></canvas></div>
+<div class="intro" id="intro" data-hold aria-hidden="true"><canvas></canvas></div>
 <main>
   <div class="mark"><span class="logo">C</span> Cortex</div>
   <h1>Thinking, connected.</h1>
   <p>Your notes, projects and AI sessions in one local workspace, so what you learn in one project carries into the next.</p>
   <span class="soon">Coming soon</span>
 </main>
-<!-- assets/intro.js is cortex/app/public/intro.js plus hold-mode framing in resize() (data-shift, fit to width); keep that when copying it again. -->
+<!-- assets/intro.js is cortex/app/public/intro.js plus a few hold-mode lines in resize() (fit narrow screens); keep them when copying it again. -->
 <script type="module" src="assets/intro.js"></script>
 </body>
 </html>
